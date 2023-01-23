@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agron</title>
+    <link rel="stylesheet" href="css/pro.css">
+</head>
+<body>
+    
+
+        <div style="height: 25%;" class="  gallery pl"> 
+            <img src="images/cab.jpg" alt="a house on a mountain">
+            <img src="images/man.jpg" alt="sime pink flowers">
+            <img src="images/banana.jpg" alt="big rocks with some trees">
+            <img src="images/tom.jpg" alt="a waterfall, a lot of tree and a great view from the sky">
+            <img src="images/cauli.jpg" alt="a cool landscape">
+            <img src="images/Image_22.jpg" alt="inside a town between two big buildings">
+            <img src="https://picsum.photos/id/1057/300/300" alt="a great view of the sea above the mountain">
+        </div>
+       
+    
+
+
+
+   
+
+<style>
+
+
+.gallery {
+  --s: 150px; /* control the size */
+  --g: 10px;  /* control the gap */
+  display: grid;
+  margin: calc(var(--s) + var(--g));
+}
+
+.gallery > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1.15;
+  object-fit: cover;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%,75% 100%,25% 100%,0 50%);
+  transform: rotate(var(--_a,0deg)) translateY(calc(100% + var(--g))) rotate(calc(-1*var(--_a,0deg))) scale(var(--_t,1));
+  cursor: pointer;
+  filter: grayscale(30%);
+  transition: .2s linear;
+}
+.gallery > img:hover {
+  filter: grayscale(0);
+  z-index: 1;
+  --_t: 1.2;
+}
+
+.gallery > img:nth-child(1) {--_a:  0deg}
+.gallery > img:nth-child(2) {--_a:  60deg}
+.gallery > img:nth-child(3) {--_a:  120deg}
+.gallery > img:nth-child(4) {--_a: -60deg}
+.gallery > img:nth-child(5) {--_a: -120deg}
+.gallery > img:nth-child(6) {--_a:  180deg}
+.gallery > img:nth-child(7) {transform: scale(var(--_t,1))}
+
+body {
+  margin-left: 5% ;
+  margin-top: 20%;
+  margin-right: 15%;
+  min-height: 100vh;
+  display: grid;
+  place-content:center;
+  background: whitesmoke;
+ /* background-image: url(images/kandam.jpeg);*/
+}
+
+</style>
+
+
+</body>
+</html>
