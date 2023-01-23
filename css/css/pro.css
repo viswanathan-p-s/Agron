@@ -1,0 +1,39 @@
+.gallery {
+    --s: 150px; /* control the size */
+    --g: 10px;  /* control the gap */
+    display: grid;
+    margin: calc(var(--s) + var(--g));
+  }
+  
+  .gallery > img {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 1.15;
+    object-fit: cover;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%,75% 100%,25% 100%,0 50%);
+    transform: rotate(var(--_a,0deg)) translateY(calc(100% + var(--g))) rotate(calc(-1*var(--_a,0deg))) scale(var(--_t,1));
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .2s linear;
+  }
+  .gallery > img:hover {
+    filter: grayscale(0);
+    z-index: 1;
+    --_t: 1.2;
+  }
+  
+  .gallery > img:nth-child(1) {--_a:  0deg}
+  .gallery > img:nth-child(2) {--_a:  60deg}
+  .gallery > img:nth-child(3) {--_a:  120deg}
+  .gallery > img:nth-child(4) {--_a: -60deg}
+  .gallery > img:nth-child(5) {--_a: -120deg}
+  .gallery > img:nth-child(6) {--_a:  180deg}
+  .gallery > img:nth-child(7) {transform: scale(var(--_t,1))}
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background: #aabbfb;
+  }
